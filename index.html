@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rafoly ♥️</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+      background: url('https://uploads.onecompiler.io/44ct8t5zw/44ct8td6b/IMG_20260206_135412_491.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      pointer-events: none;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 42px;
+    }
+
+    h2 {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+
+    .cake {
+      width: 120px;
+      margin: 15px auto;
+      animation: pop 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes pop {
+      from { transform: scale(1); }
+      to { transform: scale(1.08); }
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 20px;
+      border: none;
+      border-radius: 30px;
+      background: #ff5fa2;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255,95,162,0.7);
+    }
+
+    button:hover { background: #ff2f8b; }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .modal-content {
+      background: #111;
+      padding: 25px;
+      border-radius: 20px;
+      line-height: 1.9;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .fall {
+      position: absolute;
+      top: -50px;
+      color: #ffb6d9;
+      font-size: 22px;
+      animation: fall linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(110vh); opacity: 1; }
+    }
+
+    .heart {
+      color: pink;
+      font-size: 26px;
+    }
+
+    .firework {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: transparent;
+      border-radius: 50%;
+      box-shadow: 0 0 15px 6px rgba(255,200,200,0.8);
+      animation: boom 1.5s ease-out infinite;
+    }
+
+    @keyframes boom {
+      from { transform: scale(0); opacity: 1; }
+      to { transform: scale(5); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="overlay"></div>
+
+  <h1>I love you Rafoly ♥️👸🏻</h1>
+  <h2>I love you my princess 🌹</h2>
+
+  <img src="https://uploads.onecompiler.io/44ct8t5zw/44ct95yw5/3030c64942a6ba7877fc507b4f2acb90.jpg" 
+       class="cake" 
+       alt="cake" />
+
+  <br />
+  <button onclick="openModal()">اضغط</button>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <p>
+ميلاد حبيبتي وطفلتي. اليوم مختلف ومستثنى عن باقي الأيام، اليوم يضم عيد ميلاد حبيبتي. ربي أعطاني حظوظ الدنيا كلها يوم صارت حبيبتي. سنة حلوة تشبه حسن وجهك وطهر قلبك. يوم ميلاد أنيسة روحي وحبيبتي الحلوة وقلبي وملجأي دائماً. كل عام وأنتِ بخير يا أجمل شيء بحياتي، يا طلة الخير على الدنيا. كل عام وأنتِ بخير يا أجمل من زاد عمره سنة، وكل عام وأنتِ للعمر أجمل سنينه. كل عام وأنتِ صدفة اختلفت عن كل الصدف، يا نعمة من سابع سما. كل عام أدعي أن تبقي لي عمر. كبرتي سنة وكبر حبك بداخلي. يوم ميلاد سعيد يا روح روحي. ميلادك ميلاد للأيام الحلوة بعمري. كل عام وأنتِ حبيبتي الحلوة، وكل عام وأنتِ بخير يارب. وإن شاء الله سنينك الجاية أحلى وأجمل من اللي فات. الله يجعله ميلاد لأيام نسعد قلبك وروحك وما تشوفي الحزن والزعل يا حلوتي 👸🏻♥️
+      </p>
+
+      <br />
+      <button onclick="closeModal()">إغلاق</button>
+    </div>
+  </div>
+
+  <a id="ytLink" href="https://youtu.be/geW7rYqvfp8" target="_blank" style="display:none"></a>
+
+  <script>
+    function openModal() {
+      document.getElementById('modal').style.display = 'block';
+      document.getElementById('ytLink').click();
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    const words = ['36','36','36','36','36'];
+
+    for (let i = 0; i < 36; i++) {
+      let d = document.createElement('div');
+      d.className = 'fall';
+      d.innerText = words[Math.floor(Math.random() * words.length)];
+      d.style.left = Math.random() * 100 + 'vw';
+      d.style.animationDuration = (6 + Math.random() * 6) + 's';
+      document.body.appendChild(d);
+    }
+
+    for (let i = 0; i < 30; i++) {
+      let h = document.createElement('div');
+      h.className = 'fall heart';
+      h.innerText = '🩷';
+      h.style.left = Math.random() * 100 + 'vw';
+      h.style.animationDuration = (5 + Math.random() * 5) + 's';
+      document.body.appendChild(h);
+    }
+
+    for (let i = 0; i < 10; i++) {
+      let f = document.createElement('div');
+      f.className = 'firework';
+      f.style.left = Math.random() * 100 + 'vw';
+      f.style.top = Math.random() * 100 + 'vh';
+      document.body.appendChild(f);
+    }
+  </script>
+
+</body>
+</html>
